@@ -1,0 +1,16 @@
+version: "3.7"
+services:
+  db:
+    image: postgres:15
+    container_name: warehouse
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=dbpass
+      - POSTGRES_DB=warehouse
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
